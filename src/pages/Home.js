@@ -9,7 +9,6 @@ const Home = ({ expenses = [] }) => {
     0
   );
 
-  // Xác định tháng đang tổng kết từ dữ liệu khoản chi (mặc định lấy tháng từ dữ liệu mẫu 10/2026)
   const getSummaryMonth = () => {
     if (expenses.length > 0 && expenses[0].date) {
       const parts = expenses[0].date.split('-');
@@ -35,9 +34,7 @@ const Home = ({ expenses = [] }) => {
         </div>
       </div>
 
-      {/* 3 Thẻ thống kê nổi bật theo đúng yêu cầu đề bài */}
       <div className="stats-container">
-        {/* Card 1: Xanh dương */}
         <div className="stat-card card-blue">
           <div className="card-top">
             <span className="card-badge-icon">📊</span>
@@ -51,7 +48,6 @@ const Home = ({ expenses = [] }) => {
           </div>
         </div>
 
-        {/* Card 2: Đỏ / Hồng */}
         <div className="stat-card card-red">
           <div className="card-top">
             <span className="card-badge-icon">💸</span>
@@ -65,7 +61,6 @@ const Home = ({ expenses = [] }) => {
           </div>
         </div>
 
-        {/* Card 3: Cam */}
         <div className="stat-card card-orange">
           <div className="card-top">
             <span className="card-badge-icon">⏳</span>
@@ -80,9 +75,7 @@ const Home = ({ expenses = [] }) => {
         </div>
       </div>
 
-      {/* Các khối thông tin phân chia theo bố cục dashboard */}
       <div className="dashboard-sections">
-        {/* Khối phân chia theo danh mục */}
         <div className="section-card">
           <div className="section-header">
             <h3>📑 Phân chia theo danh mục</h3>
@@ -109,7 +102,6 @@ const Home = ({ expenses = [] }) => {
           </div>
         </div>
 
-        {/* Khối tình trạng thanh toán */}
         <div className="section-card">
           <div className="section-header">
             <h3>💳 Tình trạng thanh toán</h3>

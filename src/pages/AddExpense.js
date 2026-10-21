@@ -14,13 +14,11 @@ const AddExpense = ({ onAddExpense }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // 1. Kiểm tra ô trống
     if (!title.trim() || amount === '' || !category.trim() || !date.trim()) {
       setErrorMessage('Vui lòng nhập đầy đủ thông tin');
       return;
     }
 
-    // 2. Kiểm tra số tiền
     const numAmount = Number(amount);
     if (
       !Number.isInteger(numAmount) ||
@@ -31,7 +29,6 @@ const AddExpense = ({ onAddExpense }) => {
       return;
     }
 
-    // Thêm khoản chi mới
     onAddExpense({
       title: title.trim(),
       amount: numAmount,
