@@ -1,38 +1,336 @@
-.App {
-  text-align: center;
+/* CSS bắt buộc theo đề bài */
+.active {
+  color: red !important;
+  font-weight: bold !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.mobile .col-category,
+.mobile .col-date {
+  display: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Base Styles & Modern UI */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-header {
-  background-color: #282c34;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  line-height: 1.5;
+}
+
+.layout-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
   min-height: 100vh;
+}
+
+/* NavBar */
+.navbar {
+  display: flex;
+  gap: 24px;
+  padding: 16px 24px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 24px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #475569;
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
+.navbar a:hover {
+  color: #2563eb;
+}
+
+/* Main Content & Status */
+.main-content {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.status-message {
+  font-size: 18px;
+  font-weight: 500;
+  color: #475569;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.status-message.error {
+  color: #dc2626;
+}
+
+/* Home Page */
+.home-page h1 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #0f172a;
+}
+
+.stats-container p {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #334155;
+  font-weight: 500;
+}
+
+/* Expense List Page */
+.expense-list-page .view-mode {
+  font-weight: 600;
+  color: #2563eb;
+  margin-bottom: 16px;
+  font-size: 15px;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+  padding: 16px;
+  background-color: #f1f5f9;
+  border-radius: 8px;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-item label {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.filter-item input,
+.filter-item select {
+  padding: 8px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.filter-item input:focus,
+.filter-item select:focus {
+  border-color: #2563eb;
+}
+
+.search-result-count {
+  font-size: 15px;
+  font-weight: 500;
+  color: #475569;
+  margin-bottom: 12px;
+}
+
+.no-data-alert {
+  padding: 12px 16px;
+  background-color: #fef2f2;
+  color: #991b1b;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+/* Table */
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.expense-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.expense-table th {
+  background-color: #f8fafc;
+  color: #475569;
+  font-weight: 600;
+  padding: 12px 14px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.expense-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 14px;
+}
+
+/* Hover đổi màu nền */
+.expense-table tbody tr:hover {
+  background-color: #f1f5f9;
+}
+
+.expense-table td.col-title a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.expense-table td.col-title a:hover {
+  text-decoration: underline;
+}
+
+.status-paid {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+/* Khoản chưa thanh toán có chữ màu cam */
+.status-unpaid {
+  color: #ea580c;
+  font-weight: 600;
+}
+
+/* Buttons */
+.col-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-toggle {
+  padding: 6px 10px;
+  font-size: 12px;
+  background-color: #e0e7ff;
+  color: #3730a3;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-toggle:hover {
+  background-color: #c7d2fe;
+}
+
+.btn-delete {
+  padding: 6px 10px;
+  font-size: 12px;
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-delete:hover {
+  background-color: #fecaca;
+}
+
+.empty-cell {
+  text-align: center;
+  padding: 30px;
+  color: #64748b;
+  font-style: italic;
+}
+
+/* Form Add Expense */
+.add-expense-page h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.expense-form {
+  max-width: 500px;
+}
+
+.form-group {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 16px;
 }
 
-.App-link {
-  color: #61dafb;
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 14px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form-group input,
+.form-group select {
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #2563eb;
+}
+
+.btn-submit {
+  padding: 10px 24px;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+  background-color: #1d4ed8;
+}
+
+.form-error {
+  margin-top: 16px;
+  color: #dc2626;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* Detail Page */
+.expense-detail-page h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.detail-info p {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #334155;
+}
+
+.btn-back {
+  margin-top: 20px;
+  padding: 8px 18px;
+  background-color: #64748b;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-back:hover {
+  background-color: #475569;
+}
+
+.not-found {
+  color: #dc2626;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 16px;
 }
