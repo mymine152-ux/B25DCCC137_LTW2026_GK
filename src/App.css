@@ -35,11 +35,11 @@ body {
   flex-direction: column;
   width: 220px;
   flex-shrink: 0;
-  background: #ffffff;
+  background: linear-gradient(180deg, #0d9488 0%, #0f766e 100%);
   padding: 16px 12px;
   border-radius: 18px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  border: 1px solid #e2e8f0;
+  box-shadow: 0 6px 20px rgba(13, 148, 136, 0.2);
+  border: 1px solid #14b8a6;
 }
 
 .nav-links {
@@ -51,7 +51,7 @@ body {
 
 .nav-item {
   text-decoration: none;
-  color: #475569;
+  color: #ccfbf1;
   font-size: 15px;
   font-weight: 600;
   padding: 12px 16px;
@@ -62,15 +62,15 @@ body {
 }
 
 .nav-item:hover {
-  background: #f8fafc;
-  color: #1e293b;
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
 }
 
 .nav-item.active {
-  background: #fef2f2;
+  background: #ffffff;
   color: red !important;
   font-weight: bold !important;
-  box-shadow: 0 2px 6px rgba(239, 68, 68, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .main-content {
@@ -209,7 +209,7 @@ body {
 }
 
 .section-card {
-  background: #f8fafc;
+  background: #5ea1e4;
   border: 1px solid #e2e8f0;
   border-radius: 16px;
   padding: 20px;
@@ -624,11 +624,13 @@ body {
   .layout-container {
     flex-direction: column;
   }
+
   .navbar {
     width: 100%;
     min-height: auto;
     padding: 12px 14px;
   }
+
   .nav-links {
     flex-direction: row;
     justify-content: center;
