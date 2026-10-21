@@ -9,6 +9,20 @@ const Home = ({ expenses = [] }) => {
     0
   );
 
+  // Xác định tháng đang tổng kết từ dữ liệu khoản chi (mặc định lấy tháng từ dữ liệu mẫu 10/2026)
+  const getSummaryMonth = () => {
+    if (expenses.length > 0 && expenses[0].date) {
+      const parts = expenses[0].date.split('-');
+      if (parts.length >= 2) {
+        return `${parts[1]}/${parts[0]}`;
+      }
+    }
+    const now = new Date();
+    return `${String(now.getMonth() + 1).padStart(2, '0')}/${now.getFullYear()}`;
+  };
+
+  const summaryMonth = getSummaryMonth();
+
   return (
     <div className="home-page">
       <div className="home-top-bar">
@@ -16,15 +30,12 @@ const Home = ({ expenses = [] }) => {
           <h1>Chi tiêu cá nhân</h1>
           <span className="sub-heading">Tổng quan tình hình tài chính của bạn</span>
         </div>
-        <div className="period-tabs">
-          <button type="button" className="tab-pill active-pill">Tháng này</button>
-          <button type="button" className="tab-pill">Quý này</button>
-          <button type="button" className="tab-pill">Năm này</button>
-          <button type="button" className="tab-pill">Tùy chỉnh</button>
+        <div className="summary-month-badge">
+          Tháng: {summaryMonth}
         </div>
       </div>
 
-      {/* 3 Thẻ thống kê nổi bật theo đúng yêu cầu đề bài và giao diện hình ảnh */}
+      {/* 3 Thẻ thống kê nổi bật theo đúng yêu cầu đề bài */}
       <div className="stats-container">
         {/* Card 1: Xanh dương */}
         <div className="stat-card card-blue">
@@ -69,7 +80,7 @@ const Home = ({ expenses = [] }) => {
         </div>
       </div>
 
-      {/* Các khối thông tin phân chia theo bố cục dashboard LOVELY MONEY */}
+      {/* Các khối thông tin phân chia theo bố cục dashboard */}
       <div className="dashboard-sections">
         {/* Khối phân chia theo danh mục */}
         <div className="section-card">

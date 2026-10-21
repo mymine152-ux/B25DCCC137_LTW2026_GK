@@ -37,75 +37,31 @@ body {
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   background: linear-gradient(135deg, #0f4c81 0%, #1e5ba8 100%);
-  color: #ffffff;
-  padding: 14px 28px;
-  border-radius: 18px;
-  box-shadow: 0 8px 24px rgba(15, 76, 129, 0.18);
+  padding: 12px 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(15, 76, 129, 0.15);
   margin-bottom: 24px;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.nav-brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.brand-icon {
-  font-size: 28px;
-  background: rgba(255, 255, 255, 0.2);
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
-}
-
-.brand-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.brand-title {
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-  color: #ffffff;
-}
-
-.brand-subtitle {
-  font-size: 11px;
-  color: #dbeafe;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
   gap: 12px;
-  background: rgba(255, 255, 255, 0.12);
-  padding: 6px 10px;
-  border-radius: 12px;
 }
 
 .nav-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
   text-decoration: none;
   color: #e2e8f0;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
-  padding: 8px 14px;
-  border-radius: 8px;
+  padding: 8px 18px;
+  border-radius: 10px;
   transition: all 0.2s ease;
 }
 
 .nav-item:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.18);
   color: #ffffff;
 }
 
@@ -114,48 +70,7 @@ body {
   background: #ffffff;
   color: red !important;
   font-weight: bold !important;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
-}
-
-.nav-user-actions {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.sync-badge {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(16, 185, 129, 0.2);
-  border: 1px solid rgba(16, 185, 129, 0.4);
-  color: #a7f3d0;
-  font-size: 12px;
-  font-weight: 600;
-  padding: 5px 12px;
-  border-radius: 20px;
-}
-
-.sync-dot {
-  width: 8px;
-  height: 8px;
-  background-color: #10b981;
-  border-radius: 50%;
-  box-shadow: 0 0 6px #10b981;
-}
-
-.user-avatar {
-  width: 38px;
-  height: 38px;
-  background: #ffffff;
-  color: #0f4c81;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  font-size: 18px;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
 }
 
 /* Main Content Box */
@@ -179,7 +94,7 @@ body {
 }
 
 /* ========================================================
-   3. TRANG CHỦ (HOME) - BỐ CỤC DASHBOARD LOVELY MONEY
+   3. TRANG CHỦ (HOME) - BỐ CỤC DASHBOARD
    ======================================================== */
 .home-top-bar {
   display: flex;
@@ -201,28 +116,17 @@ body {
   color: #64748b;
 }
 
-.period-tabs {
-  display: flex;
-  gap: 6px;
-  background-color: #f1f5f9;
-  padding: 4px;
-  border-radius: 10px;
-}
-
-.tab-pill {
-  border: none;
-  background: transparent;
-  padding: 6px 14px;
-  font-size: 13px;
-  font-weight: 600;
-  color: #64748b;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.tab-pill.active-pill {
-  background-color: #0f4c81;
+.summary-month-badge {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(135deg, #0f4c81 0%, #1e5ba8 100%);
   color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(15, 76, 129, 0.2);
+  letter-spacing: 0.3px;
 }
 
 /* 3 Cards thống kê */
